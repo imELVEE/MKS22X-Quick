@@ -1,8 +1,15 @@
 public class Quick{
+  public static int quickselect(int[] data, int k){
+    int timesDone = 0;
+    while (partition(data,0,data.length-1) != k){
+      timesDone++;
+    }
+    return data[k];
+  }
+
   public static int partition(int[] data, int start, int end){
     int randIndex = (int) (Math.random()*10%(end-start)) + start;
     int pivot = data[randIndex];
-    System.out.println(pivot);
 
     data[randIndex] = data[start];
     data[start] = pivot;
