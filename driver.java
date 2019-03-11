@@ -1,5 +1,10 @@
 public class driver{
   public static void main(String[] args){
+    //TESTS PARTITION
+    System.out.println("\nTESTING PARTITION");
+    System.out.println("The number above the array should be in its index (so 0 should be above 0 _ _ _ _ _)");
+    System.out.println("does not work if partition is not public, so either make it public or comment this out");
+    System.out.println("-------------------");
     int[] data = new int[] {0,1,4,3,2,5};
     System.out.println(Quick.partition(data,0,5));
     for(int i = 0 ; i < data.length ; i++){
@@ -21,6 +26,9 @@ public class driver{
     }
     System.out.println("\n");
 
+    //TESTS QUICKSELECT
+    System.out.println("\nTESTING QUICKSELECT");
+    System.out.println("-------------------");
     int[] ary = {2, 10, 15, 23, 0, 5};  //sorted :  {0,2,5,10,15,23}
     System.out.println(Quick.quickselect(ary, 0 ));  //would return 0
     System.out.println("^ Should be 0");

@@ -1,8 +1,6 @@
 public class Quick{
   public static int quickselect(int[] data, int k){
-    int timesDone = 0;
     while (partition(data,0,data.length-1) != k){
-      timesDone++;
     }
     return data[k];
   }
