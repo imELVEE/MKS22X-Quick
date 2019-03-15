@@ -1,4 +1,17 @@
 public class Quick{
+  public static void quicksort(int[] data){
+    quick(data,0,data.length-1);
+  }
+
+  private static void quick(int[] data, int lo, int high){
+    int pivot = partition(data,lo,high);
+    if (lo != high){
+      quick(data,pivot+1,high);
+      quick(data,lo,pivot-1);
+    }
+  }
+
+
   public static int quickselect(int[] data, int k){
     /*
     while (partition(data,0,data.length-1) != k){
