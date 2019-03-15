@@ -5,9 +5,13 @@ public class Quick{
 
   private static void quick(int[] data, int lo, int high){
     int pivot = partition(data,lo,high);
-    if (lo != high){
-      quick(data,pivot+1,high);
-      quick(data,lo,pivot-1);
+    if (pivot != high){
+      if (pivot < high-1){
+        quick(data,pivot+1,high);
+      }
+      if (pivot > lo){
+        quick(data,lo,pivot-1);
+      }
     }
   }
 

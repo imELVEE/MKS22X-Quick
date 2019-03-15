@@ -170,5 +170,17 @@ public class driver{
       System.out.println("Oops! your quickselect returned "+part+" when it should've been "+sortedData[12]+"  "+(part == sortedData[11]));
     }
     System.out.println();
+
+    System.out.println("\nTESTING QUICKSORT");
+    System.out.println("-------------------");
+    Quick.quicksort(data);
+    System.out.println("Sorted: ");
+    for(int i = 0 ; i < sortedData.length ; i++){
+      System.out.print(sortedData[i] + "  ");
+    }
+    System.out.println("\nMethod: ");
+    for(int i = 0 ; i < data.length ; i++){
+      System.out.print(data[i] + "  ");
+    }
   }
 }
