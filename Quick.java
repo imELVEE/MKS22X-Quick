@@ -10,17 +10,23 @@ public class Quick{
 
   private static int quicksel(int[] data, int k, int start, int end){
     int pivot = partition(data,start,end);
-    if (pivot < k){
-      return quicksel(data,k,pivot+1,end);
-    }
-    else if (pivot > k){
-      return quicksel(data,k,start,pivot-1);
+    while (pivot != k){
+      if (pivot < k){
+        pivot = partition(data,pivot+1,end);
+      }
+      else if (pivot > k){
+        pivot = partition(data,start,pivot-1);
+      }
     }
     return data[k];
   }
 
   public static int partition(int[] data, int start, int end){
-    int randIndex = (int) (Math.random()*10%(end-start)) + start;
+    int tens = 1;
+    for (int length = data.length ; length > 0 ; length /= 10){
+      tens *= 10;
+    }
+    int randIndex = (int) (Math.random()*tens%(end-start)) + start;
     int pivot = data[randIndex];
 
     data[randIndex] = data[start];
