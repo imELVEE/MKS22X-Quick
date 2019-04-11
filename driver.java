@@ -182,5 +182,19 @@ public class driver{
     for(int i = 0 ; i < data.length ; i++){
       System.out.print(data[i] + "  ");
     }
+    System.out.println("\n");
+
+    sortedData = new int[] {0,2,5,10,15,23};
+    data = new int[] {2, 10, 15, 23, 0, 5};  //sorted :  {0,2,5,10,15,23}
+    Quick.quicksort(data);
+    System.out.println("Sorted: ");
+    for(int i = 0 ; i < sortedData.length ; i++){
+      System.out.print(sortedData[i] + "  ");
+    }
+    System.out.println("\nMethod: ");
+    for(int i = 0 ; i < data.length ; i++){
+      System.out.print(data[i] + "  ");
+    }
+    System.out.println();
   }
 }
