@@ -1,5 +1,5 @@
 public class Quick{
-  private static int dupli = 0;
+  //private static int dupli = 0;
 
   public static void quicksort(int[] data){
     quick(data,0,data.length-1);
@@ -18,12 +18,20 @@ public class Quick{
     }
     */
     //System.out.println("lo: " + lo + "\nhigh: " + high + "\ndifference: " + (high-lo) + "\nmiddle: " + ((high-lo)/2 + lo) + "\n");
-    int middle = (high-lo)/2 + lo;
-    quicksel(data,middle,lo,high);
-    if (lo != high && middle != 0){
+    //int middle = (high-lo)/2 + lo;
+    //quicksel(data,middle,lo,high);
+    //System.out.println("lo: " +lo + "\nhigh: " + high);
+    int middle = partition(data,lo,high);
+    //System.out.println("middle: " +middle);
+    if (middle != high){
       quick(data,middle+1,high);
+    }
+    if (middle != lo){
       quick(data,lo,middle-1);
     }
+    //else{
+      //System.out.println();
+    //}
   }
 
 
@@ -69,17 +77,14 @@ public class Quick{
       if(data[i] < pivot){
         i++;
       }
+      /*
       else if(data[i] == pivot){
-        if (Math.random() < 0.5){
-          i++;
-        }
-        else{
           swap(data,i,start);
           start++;
           end--;
           dupli++;
-        }
       }
+      */
       else{
         /*
         int tobeSwapped = data[i];
@@ -91,9 +96,15 @@ public class Quick{
       }
     }
 
-
-    data[start-1] = data[end];
-    data[end] = pivot;
+    //for (int i = 1 ; i <= dupli ; i++){
+      swap(data,start-1,end);
+      start--;
+      //end--;
+      /*
+      data[start-1] = data[end];
+      data[end] = pivot;
+      */
+    //}
     return end;
   }
 
